@@ -6,6 +6,9 @@ Run *grunt* for building, *grunt serve* for preview, and *grunt serve:dist* for 
 - Accounts reset on server restart from:  server/config/seed.js
 - `navbar` included in main.html
 
+### Nav Branch
+- add flatly, replaced header w/ jumbotron
+
 ## Available generators:
 - `App`
 - angular-fullstack (aka angular-fullstack:app)
@@ -23,18 +26,3 @@ Run *grunt* for building, *grunt serve* for preview, and *grunt serve:dist* for 
 - `Deployment`
 - angular-fullstack:openshift
 - angular-fullstack:heroku
-
-    // Add vendor prefixed styles
-      autoprefixer: {
-        options: {
-          browsers: ['last 2 versions']
-        },
-        dist: {
-          files: [{
-            expand: true,
-            cwd: '.tmp/',
-            src: '{,*/}*.css',
-            dest: '.tmp/'
-          }]
-        }
-      },
