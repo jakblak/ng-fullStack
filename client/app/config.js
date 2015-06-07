@@ -8,7 +8,7 @@
       .run(run);
 
     config.$inject = ['$routeProvider', '$locationProvider', '$httpProvider'];
-    factory.$inject = ['$rootScope', '$q', '$cookieStore', '$location'];
+    authInterceptor.$inject = ['$rootScope', '$q', '$cookieStore', '$location'];
     run.$inject = ['$rootScope', '$location', 'Auth'];
 
     function config($routeProvider, $locationProvider, $httpProvider) {

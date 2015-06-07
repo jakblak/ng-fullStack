@@ -1,7 +1,13 @@
-'use strict';
+(function() {
+  'use strict';
 
-angular.module('app')
-  .config(function ($routeProvider) {
+angular
+  .module('app')
+  .config(config);
+
+  config.$inject = ['$routeProvider'];
+
+    function config($routeProvider) {
     $routeProvider
       .when('/login', {
         templateUrl: 'app/account/login/login.html',
@@ -16,4 +22,6 @@ angular.module('app')
         controller: 'SettingsCtrl',
         authenticate: true
       });
-  });
+  };
+
+})();
