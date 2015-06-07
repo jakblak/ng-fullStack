@@ -1,22 +1,29 @@
-'use strict';
+(function() {
+  'use strict';
 
-angular.module('app')
-  .factory('User', function ($resource) {
+  angular
+    .module('app')
+    .factory('User', User);
+
+  User.$inject = ['$resource'];
+
+  function User($resource) {
     return $resource('/api/users/:id/:controller', {
       id: '@_id'
-    },
-    {
+    }, {
       changePassword: {
         method: 'PUT',
         params: {
-          controller:'password'
+          controller: 'password'
         }
       },
       get: {
         method: 'GET',
         params: {
-          id:'me'
+          id: 'me'
         }
       }
-	  });
-  });
+    });
+  };
+
+})();

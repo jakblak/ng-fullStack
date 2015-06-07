@@ -1,7 +1,13 @@
-'use strict';
+(function() {
+  'use strict';
 
-angular.module('app')
-  .controller('NavbarCtrl', function ($scope, $location, Auth) {
+  angular
+    .module('app')
+    .controller('NavbarCtrl', NavbarCtrl);
+
+  NavbarCtrl.$inject = ['$scope', '$location', 'Auth'];
+
+  function NavbarCtrl($scope, $location, Auth) {
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
@@ -20,4 +26,5 @@ angular.module('app')
     $scope.isActive = function(route) {
       return route === $location.path();
     };
-  });
+  };
+})();

@@ -2,6 +2,10 @@ https://github.com/DaftMonk/generator-angular-fullstack
 
 Run *grunt* for building, *grunt serve* for preview, and *grunt serve:dist* for a preview of the built app.
 
+- me@me.com, 4444  -  test@test.com, test   -   admin@admin.com, admin
+- Accounts reset on server restart from:  server/config/seed.js
+- `navbar` included in main.html
+
 ## Available generators:
 - `App`
 - angular-fullstack (aka angular-fullstack:app)
