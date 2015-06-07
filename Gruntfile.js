@@ -20,6 +20,8 @@ module.exports = function (grunt) {
     buildcontrol: 'grunt-build-control'
   });
 
+ // grunt.loadNpmTasks('grunt-autoprefixer');
+
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
@@ -160,19 +162,6 @@ module.exports = function (grunt) {
     },
 
     // Add vendor prefixed styles
-    autoprefixer: {
-      options: {
-        browsers: ['last 1 version']
-      },
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/',
-          src: '{,*/}*.css',
-          dest: '.tmp/'
-        }]
-      }
-    },
 
     // Debugging with node inspector
     'node-inspector': {
@@ -300,7 +289,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       options: {
         // This should be the name of your apps angular module
-        module: 'angularFullStackApp',
+        module: 'app',
         htmlmin: {
           collapseBooleanAttributes: true,
           collapseWhitespace: true,
@@ -523,7 +512,7 @@ module.exports = function (grunt) {
         'concurrent:server',
         'injector',
         'wiredep',
-        'autoprefixer',
+        //'autoprefixer',
         'concurrent:debug'
       ]);
     }
@@ -534,7 +523,7 @@ module.exports = function (grunt) {
       'concurrent:server',
       'injector',
       'wiredep',
-      'autoprefixer',
+     // 'autoprefixer',
       'express:dev',
       'wait',
       'open',
@@ -562,7 +551,7 @@ module.exports = function (grunt) {
         'env:all',
         'concurrent:test',
         'injector',
-        'autoprefixer',
+       // 'autoprefixer',
         'karma'
       ]);
     }
@@ -575,7 +564,7 @@ module.exports = function (grunt) {
         'concurrent:test',
         'injector',
         'wiredep',
-        'autoprefixer',
+      //  'autoprefixer',
         'express:dev',
         'protractor'
       ]);
@@ -593,13 +582,13 @@ module.exports = function (grunt) {
     'injector',
     'wiredep',
     'useminPrepare',
-    'autoprefixer',
     'ngtemplates',
     'concat',
     'ngAnnotate',
     'copy:dist',
     'cdnify',
     'cssmin',
+   // 'autoprefixer',
     'uglify',
     'rev',
     'usemin'

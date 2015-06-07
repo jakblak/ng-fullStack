@@ -1,10 +1,14 @@
-'use strict';
+(function() {
+  'use strict';
 
-angular.module('angularFullStackApp')
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
-      });
-  });
+  angular
+    .module('app')
+    .config(function($routeProvider) {
+      $routeProvider
+        .when('/', {
+          templateUrl: 'app/main/main.html',
+          controller: 'MainCtrl'
+        });
+    });
+
+})();

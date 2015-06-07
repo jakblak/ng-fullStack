@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angularFullStackApp')
+angular.module('app')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
       'title': 'Home',
