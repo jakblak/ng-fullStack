@@ -11,6 +11,9 @@
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
+    }, {
+      'title': 'Latest',
+      'link': '/latest'
     }];
 
     $scope.isCollapsed = true;

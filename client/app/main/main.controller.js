@@ -11,12 +11,14 @@
           $scope.awesomeThings = awesomeThings;
         });
 
-      $scope.addThing = function() {
+      $scope.create = function() {
         if ($scope.newThing === '') {
           return;
         }
         $http.post('/api/things', {
-          name: $scope.newThing
+          //name: $scope.newThing
+          name: this.name,
+          info: this.info
         });
         $scope.newThing = '';
       };

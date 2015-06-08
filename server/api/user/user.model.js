@@ -7,7 +7,10 @@ var authTypes = ['github', 'twitter', 'facebook', 'google'];
 
 var UserSchema = new Schema({
   name: String,
-  email: { type: String, lowercase: true },
+  email: {
+    type: String,
+    lowercase: true
+  },
   role: {
     type: String,
     default: 'user'
@@ -54,10 +57,6 @@ UserSchema
     };
   });
 
-/**
- * Validations
- */
-
 // Validate empty email
 UserSchema
   .path('email')
@@ -79,15 +78,17 @@ UserSchema
   .path('email')
   .validate(function(value, respond) {
     var self = this;
-    this.constructor.findOne({email: value}, function(err, user) {
-      if(err) throw err;
-      if(user) {
-        if(self.id === user.id) return respond(true);
+    this.constructor.findOne({
+      email: value
+    }, function(err, user) {
+      if (err) throw err;
+      if (user) {
+        if (self.id === user.id) return respond(true);
         return respond(false);
       }
       respond(true);
     });
-}, 'The specified email address is already in use.');
+  }, 'The specified email address is already in use.');
 
 var validatePresenceOf = function(value) {
   return value && value.length;
@@ -110,34 +111,15 @@ UserSchema
  * Methods
  */
 UserSchema.methods = {
-  /**
-   * Authenticate - check if the passwords are the same
-   *
-   * @param {String} plainText
-   * @return {Boolean}
-   * @api public
-   */
+  // Authenticate - check if the passwords are the same
   authenticate: function(plainText) {
     return this.encryptPassword(plainText) === this.hashedPassword;
   },
-
-  /**
-   * Make salt
-   *
-   * @return {String}
-   * @api public
-   */
+  //Make salt
   makeSalt: function() {
     return crypto.randomBytes(16).toString('base64');
   },
-
-  /**
-   * Encrypt password
-   *
-   * @param {String} password
-   * @return {String}
-   * @api public
-   */
+  // Encrypt password
   encryptPassword: function(password) {
     if (!password || !this.salt) return '';
     var salt = new Buffer(this.salt, 'base64');
