@@ -6,9 +6,10 @@ Run *grunt* for building, *grunt serve* for preview, and *grunt serve:dist* for 
 - Accounts reset on server restart from:  server/config/seed.js
 - `navbar` included in main.html
 
-### Nav Branch
-- add flatly, replaced header w/ jumbotron, 
-- fixing CRUD for 'things' model
+### Original Branch
+- add flatly, replaced header w/ jumbotron
+- added John Papa styles to angular files
+- add form to main.html to Create and display new 'things'
 
 ## Available generators:
 - `App`
@@ -27,5 +28,3 @@ Run *grunt* for building, *grunt serve* for preview, and *grunt serve:dist* for 
 - `Deployment`
 - angular-fullstack:openshift
 - angular-fullstack:heroku
-
-data-ng-submit="create()" 
