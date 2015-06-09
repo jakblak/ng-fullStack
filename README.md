@@ -7,7 +7,8 @@ Run *grunt* for building, *grunt serve* for preview, and *grunt serve:dist* for 
 - `navbar` included in main.html
 
 ### Nav Branch
-- add flatly, replaced header w/ jumbotron
+- add flatly, replaced header w/ jumbotron, 
+- fixing CRUD for 'things' model
 
 ## Available generators:
 - `App`
