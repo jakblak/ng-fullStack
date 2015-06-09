@@ -1,4 +1,4 @@
-https://github.com/DaftMonk/generator-angular-fullstack
+[Angular Fullstack Fork](https://github.com/DaftMonk/generator-angular-fullstack)
 
 Run *grunt* for building, *grunt serve* for preview, and *grunt serve:dist* for a preview of the built app.
 
@@ -26,3 +26,5 @@ Run *grunt* for building, *grunt serve* for preview, and *grunt serve:dist* for 
 - `Deployment`
 - angular-fullstack:openshift
 - angular-fullstack:heroku
+
+data-ng-submit="create()" 

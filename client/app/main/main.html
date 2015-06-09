@@ -12,43 +12,48 @@
   <div class="row">
     <div class="col-lg-12">
       <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in things">
         <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}</a></li>
       </ul>
     </div>
   </div>
 </div><br>
-<h1 class="page-header">Add a Thing</h2>
 
-<div class="col-sm-8">
-  <form data-ng-submit="create()" role="form" novalidate>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="name">Name</label>
-      <div>
-        <input type="text" class="form-control" data-ng-model="name" id="name" placeholder="Name" required>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="page-header">Add a Thing</h2>
+      <div class="col-sm-8">
+        <form role="form" novalidate>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="name">Name</label>
+            <div>
+              <input type="text" class="form-control" data-ng-model="name" id="name" placeholder="Name" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="info">Info:</label>
+            <textarea class="form-control" data-ng-model="info" rows="2" id="info" placeholder="Put your info here"></textarea>
+          </div>
+          <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-lg" ng-click="create()">Submit</button>
+          </div>
+          <!-- The error message element -->
+          <div data-ng-show="error">
+            <strong data-ng-bind="error"></strong>
+          </div>
+        </form>
       </div>
     </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="info">Info:</label>
-      <textarea class="form-control" rows="2" id="info" placeholder="Put your info here"></textarea>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Submit</button>
-      </div>
-    </div>
-    <!-- The error message element -->
-    <div data-ng-show="error">
-      <strong data-ng-bind="error"></strong>
-    </div>
-  </form>
-</div><br>
+  </div>
+</div>
 
+<br>
 <div class="col-sm-12">
-<footer class="footer">
-  <div class="container">
-    <p>Angular Fullstack v2.0.13 |
-      <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-      <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
-    </div>
-  </footer></div>
+  <footer class="footer">
+    <div class="container">
+      <p>Angular Fullstack v2.0.13 |
+        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
+        <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+      </div>
+    </footer></div>
