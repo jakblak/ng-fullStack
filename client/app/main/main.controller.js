@@ -5,10 +5,17 @@
     .module('app')
     .controller('MainCtrl', MainCtrl);
 
-  MainCtrl.$inject = ['$scope', '$http', '$location'];
+  MainCtrl.$inject = ['$scope', '$http', '$location', '$alert'];
 
-  function MainCtrl($scope, $http, $location) {
+  function MainCtrl($scope, $http, $location, $alert) {
 
+    var alert = $alert({
+        title: 'Success!',
+        content: 'The contact was deleted successfully.',
+        type: 'success',
+        container: '#alertContainer',
+        show: false
+    });
     // GET all the things and show them
     $http.get('/api/things', {
       cache: true
@@ -29,6 +36,7 @@
           $scope.things.push(data);
           $scope.name = '';
           $scope.info = '';
+          alert.show();
           console.log(data);
           //$location.url('/#things');
         })

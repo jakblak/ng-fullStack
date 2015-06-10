@@ -7,7 +7,9 @@
       'ngResource',
       'ngSanitize',
       'ngRoute',
-      'ui.bootstrap'
+      //'ui.bootstrap',
+      'ngAnimate',
+      'mgcrea.ngStrap'
     ]);
 
 })();
