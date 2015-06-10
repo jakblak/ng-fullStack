@@ -9,7 +9,8 @@
       'ngRoute',
       //'ui.bootstrap',
       'ngAnimate',
-      'mgcrea.ngStrap'
+      'mgcrea.ngStrap',
+      'mgcrea.ngStrap.modal'
     ]);
 
 })();

@@ -9,13 +9,14 @@
 
   function MainCtrl($scope, $http, $location, $alert) {
 
-    var alert = $alert({
-        title: 'Success!',
-        content: 'The contact was deleted successfully.',
-        type: 'success',
-        container: '#alertContainer',
-        show: false
-    });
+    $scope.alert = {
+      "placement": "top",
+      "title": "Success!",
+      "content": "New thing has been added",
+      "type": "success",
+      "animation": "am-fade-and-slide-top"
+    };
+
     // GET all the things and show them
     $http.get('/api/things', {
       cache: true
@@ -33,12 +34,14 @@
         info: $scope.info
       })
         .success(function(data) {
-          $scope.things.push(data);
-          $scope.name = '';
-          $scope.info = '';
-          alert.show();
-          console.log(data);
-          //$location.url('/#things');
+          if (!($scope.name && $scope.info === '')) {
+            $scope.things.push(data);
+            $scope.name = '';
+            $scope.info = '';
+            console.log(data);
+            //if ($scope.data)
+            //$location.url('/#things');
+          }
         })
         .error(function(data) {
           console.log('Error: ' + data);

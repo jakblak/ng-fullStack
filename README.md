@@ -28,4 +28,4 @@ Run *grunt* for building, *grunt serve* for preview, and *grunt serve:dist* for 
 - angular-fullstack:openshift
 - angular-fullstack:heroku
 
-data-ng-submit="create()" 
+angular-animate, angular-strap, angular-motion
