@@ -5,9 +5,9 @@
     .module('app')
     .controller('MainCtrl', MainCtrl);
 
-  MainCtrl.$inject = ['$scope', '$http', '$location', '$alert'];
+  MainCtrl.$inject = ['$scope', '$http', '$location', '$alert', 'thingApi'];
 
-  function MainCtrl($scope, $http, $location, $alert) {
+  function MainCtrl($scope, $http, $location, $alert, thingApi) {
 
     $scope.alert = {
       "placement": "top",
@@ -18,31 +18,24 @@
     };
 
     // GET all the things and show them
-    $http.get('/api/things', {
-      cache: true
-    })
-      .success(function(data) {
-        $scope.things = data;
-      })
-      .error(function(data) {
-        console.log('Error: ' + data);
+    thingApi.getThings()
+      .then(function(result) {
+        $scope.things = result;
       });
 
-    $scope.create = function() {
-      $http.post('/api/things', {
+    $scope.create = function(post) {
+
+      thingApi.createThing({
         name: $scope.name,
         info: $scope.info
       })
-        .success(function(data) {
-          if (!($scope.name && $scope.info === '')) {
-            $scope.things.push(data);
-            $scope.name = '';
-            $scope.info = '';
-            console.log(data);
-            //if ($scope.data)
-            //$location.url('/#things');
-          }
-        })
+      .success(function(data) {
+        $scope.things.push(data);
+        $scope.name = '';
+        $scope.info = '';
+        console.log(data);
+        //$location.url('/#things');
+      })
         .error(function(data) {
           console.log('Error: ' + data);
         });

@@ -2,13 +2,14 @@
 
 Run *grunt* for building, *grunt serve* for preview, and *grunt serve:dist* for a preview of the built app.
 
-- me@me.com, 4444  -  test@test.com, test   -   admin@admin.com, admin
-- Accounts reset on server restart from:  server/config/seed.js
+- test@test.com, test   -   admin@admin.com, admin
 - `navbar` included in main.html
+- db.things.remove({})    =   to reset things/users on angularfullstack-dev
 
-### Nav Branch
+### Dev Branch
 - add flatly, replaced header w/ jumbotron, 
-- fixing CRUD for 'things' model
+- fixing CRUD for 'things' model, add success message
+- seed DB only if users/things = 0
 
 ## Available generators:
 - `App`
