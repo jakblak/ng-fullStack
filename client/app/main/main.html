@@ -38,8 +38,8 @@
               <label class="control-label col-sm-2" for="info">Info:</label>
               <textarea class="form-control" data-ng-model="info" rows="2" id="info" placeholder="Put your info here"></textarea>
             </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-lg" ng-click="create(post)" bs-alert="alert" data-placement="top" data-duration="3" data-animation="am-fade-and-slide-top">Submit</button>
+            <div class="form-group" id="alertContainer">
+              <button type="submit" class="btn btn-primary btn-lg" ng-click="create(post)">Submit</button>
             </div>
             <!-- The error message element -->
             <div data-ng-show="error">

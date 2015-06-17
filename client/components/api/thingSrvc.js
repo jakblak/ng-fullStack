@@ -27,8 +27,8 @@
       return $http.post('/api/things', post);
     }
 
-    function deleteThing(id) {
-      return $http.delete('/api/things/' + id);
+    function deleteThing(thing) {
+      return $http.delete('/api/things/' + thing._id);
     }
 
     function handleError(response) {

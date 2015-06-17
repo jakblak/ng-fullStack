@@ -30,3 +30,7 @@ Run *grunt* for building, *grunt serve* for preview, and *grunt serve:dist* for 
 - angular-fullstack:heroku
 
 angular-animate, angular-strap, angular-motion
+
+
+
+bs-alert="alert" data-placement="top" data-duration="3" data-animation="am-fade-and-slide-top"
