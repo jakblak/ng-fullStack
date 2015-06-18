@@ -9,15 +9,14 @@
 
   function MainCtrl($scope, $http, $location, $alert, thingApi) {
 
-  var alert = $alert({
-    title: 'Success!',
-    content: 'The contact was added successfully.',
-    type: 'success',
-    container: '#alertContainer',
-    show: false,
-    placement: top,
-    duration: 3
-  });
+    var alert = $alert({
+      title: 'Success!',
+      content: 'The contact was added successfully.',
+      type: 'success',
+      container: '#alertContainer',
+      show: false,
+      duration: 3
+    });
 
     $scope.showAlert = false;
 
