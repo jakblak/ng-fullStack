@@ -8,6 +8,10 @@
         .when('/', {
           templateUrl: 'app/main/main.html',
           controller: 'MainCtrl'
+        })
+        .when('/:id', {
+          templateUrl: 'app/main/thing.html',
+          controller: 'MainCtrl'
         });
     });
 

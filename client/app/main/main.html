@@ -15,7 +15,7 @@
       <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in things">
         <li>
         <span class="input-group-addon"><a href="#" ng-click="deleteThing(thing)"><span class="glyphicon glyphicon-remove pull-left"></a>
-        <a name="things" href="#" tooltip="{{thing.info}}">{{thing.name}}</a></li>
+        <a href="{{thing._id}}" data-title="{{thing.info}}" data-animation="am-flip-x" bs-tooltip>{{thing.name}}</a></li>
       </span></span></ul>
     </div>
   </div>

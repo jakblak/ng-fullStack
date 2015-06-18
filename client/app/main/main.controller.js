@@ -53,6 +53,6 @@
           console.log('Error: ' + data);
         });
     };
-  };
 
+  };
 })();
