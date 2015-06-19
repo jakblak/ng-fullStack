@@ -6,10 +6,14 @@ Run *grunt* for building, *grunt serve* for preview, and *grunt serve:dist* for 
 - `navbar` included in main.html
 - db.things.remove({})    =   to reset things/users on angularfullstack-dev
 
-### Dev Branch
-- add flatly, replaced header w/ jumbotron, 
-- fixing CRUD for 'things' model, add success message
+### Changes to Original
+- add flatly style, replaced header w/ jumbotron, 
+- show tooltip on name hover
+- display # of things
 - seed DB only if users/things = 0
+- form to add new things
+- X to delete things
+- deep linking to each thing & display thing name/info
 
 ## Available generators:
 - `App`
