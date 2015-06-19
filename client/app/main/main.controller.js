@@ -5,9 +5,9 @@
     .module('app')
     .controller('MainCtrl', MainCtrl);
 
-  MainCtrl.$inject = ['$scope', '$http', '$location', '$alert', 'thingApi'];
+  MainCtrl.$inject = ['$scope', '$http', '$location', '$alert', '$routeParams', 'thingApi'];
 
-  function MainCtrl($scope, $http, $location, $alert, thingApi) {
+  function MainCtrl($scope, $http, $location, $alert, $routeParams, thingApi) {
 
     var alert = $alert({
       title: 'Success!',
@@ -53,6 +53,25 @@
           console.log('Error: ' + data);
         });
     };
+
+    $scope.findOne = function() {
+      thingApi.findOneThing()
+        .then(function(result) {
+          $scope.things = result;
+        });
+    }
+
+    // var id = $routeParams.id;
+    // $scope.findOne = function(id) {
+    //   thingApi.findOneThing(id)
+    //   // $http.get('/api/things/:id')
+    //     .success(function(data) {
+    //       $scope.things = data;
+    //     })
+    //     .error(function(data) {
+    //       console.log('Error: ' + data);
+    //     });
+    // }
 
   };
 })();

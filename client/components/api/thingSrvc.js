@@ -5,11 +5,12 @@
     .module('app')
     .factory('thingApi', thingApi);
 
-  thingApi.$inject = ['$http'];
+  thingApi.$inject = ['$http', '$route'];
 
-  function thingApi($http) {
+  function thingApi($http, $route) {
     return ({
       getThings: getThings,
+      findOneThing: findOneThing,
       createThing: createThing,
       deleteThing: deleteThing
     });
@@ -29,6 +30,12 @@
 
     function deleteThing(thing) {
       return $http.delete('/api/things/' + thing._id);
+    }
+
+    function findOneThing(thing) {
+      var url = '/api/things/' + $route.current.params.id;
+      var request = $http.get(url);
+      return (request.then(handleSuccess, handleError));
     }
 
     function handleError(response) {
